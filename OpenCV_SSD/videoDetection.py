@@ -25,6 +25,8 @@ while True:
     # 设置网络输入
     net.setInput(blob)
     detections = net.forward()
+    t2 = time.time()
+    print("time costs: {}ms".format((t2-t1)*1000))
     # print(detections.shape)
 
     for i in range(detections.shape[2]):
@@ -41,8 +43,6 @@ while True:
 
     # 保持输出
     cv2.imshow("detected result", frame)
-    t2 = time.time()
-    print("time costs: {}ms".format((t2-t1)*1000))
     inputKey = cv2.waitKey(20)
     if inputKey == ord('q'):
         cv2.imwrite("found_face.jpg", frame)
