@@ -14,7 +14,7 @@ def discern(img):
         right = face.right()
         bottom = face.bottom()
         cv2.rectangle(img, (left, top), (right, bottom), (0, 255, 0), 2)
-        cv2.imshow("face detection", img)
+    cv2.imshow("face detection", img)
     return img
 
 cap = cv2.VideoCapture(0)
